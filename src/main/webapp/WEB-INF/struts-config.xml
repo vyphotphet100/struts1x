@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+    <form-beans>
+        <form-bean name="helloWorldForm" type="com.example.form.HelloWorldForm" />
+        <form-bean name="login" type="com.example.form.LoginForm" />
+        <form-bean name="login-submit" type="com.example.form.LoginSubmitForm" />
+    </form-beans>
+
+    <action-mappings>
+        <action path="/fake-data" type="com.example.action.HelloWorldAction" name="helloWorldForm">
+            <forward name="success" path="/helloWorld.jsp" />
+        </action>
+        <action path="/login" type="com.example.action.LoginAction" name="login">
+            <forward name="success" path="/login.jsp" />
+        </action>
+        <action path="/login-submit" type="com.example.action.LoginSubmitAction" name="login-submit">
+            <forward name="success" path="/login-successfully.jsp" />
+        </action>
+
+    </action-mappings>
+
+</struts-config>
